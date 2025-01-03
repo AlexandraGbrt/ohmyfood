@@ -1,0 +1,9 @@
+@use 'mixins';
+// @use 'variables';
+// @use 'base';
+// @use 'header';
+// @use 'buttons';
+
+.info{
+    @include mixins.center;
+  }
