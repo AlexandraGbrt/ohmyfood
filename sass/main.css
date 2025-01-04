@@ -1,0 +1,43 @@
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding-top: 20px;
+}
+header .logo-header {
+  max-width: 80%;
+  margin-bottom: 20px;
+}
+header .search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 15px;
+  background-color: #f4f4f4;
+  width: 100%;
+}
+header .search-form i {
+  font-size: 20px;
+  margin-right: 10px;
+  color: black;
+}
+header .search-form form {
+  display: flex;
+  align-items: center;
+}
+header .search-form form input {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 300px;
+  border: none;
+  outline: none;
+  background-color: #f4f4f4;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=main.css.map */

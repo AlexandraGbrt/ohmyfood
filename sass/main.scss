@@ -1,8 +1,11 @@
 @use 'mixins';
+@use 'header';
 // @use 'variables';
 // @use 'base';
-// @use 'header';
+
 // @use 'buttons';
+// @use 'footer';
+
 
 .info{
     @include mixins.center;
