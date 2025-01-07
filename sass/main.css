@@ -1,30 +1,32 @@
 header {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  height: 100vh;
-  padding-top: 20px;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
 }
 header .logo-header {
-  max-width: 80%;
-  margin-bottom: 20px;
+  width: 50%;
+  margin: 20px 0;
 }
 header .search-form {
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 5px 15px;
-  background-color: #f4f4f4;
+  align-items: center;
+  flex-direction: row;
+  background-color: #EAEAEA;
   width: 100%;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 header .search-form i {
-  font-size: 20px;
+  font-size: 15px;
+  color: #353535;
   margin-right: 10px;
-  color: black;
 }
 header .search-form form {
   display: flex;
   align-items: center;
+  color: #EAEAEA;
 }
 header .search-form form input {
   padding: 10px;
@@ -33,11 +35,105 @@ header .search-form form input {
   max-width: 300px;
   border: none;
   outline: none;
-  background-color: #f4f4f4;
+  background-color: #EAEAEA;
+  font-family: "Roboto", sans-serif;
+}
+
+.card img {
+  width: 200px;
+  height: 100px;
+  object-fit: cover;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 600;
 }
 
 .info {
   display: flex;
   justify-content: center;
   align-items: center;
-}/*# sourceMappingURL=main.css.map */
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  background-color: #f3f3f3;
+}
+.info h1 {
+  padding: 0 20px;
+}
+.info p {
+  font-size: 18px;
+  font-weight: 300;
+  padding: 0 20px;
+}
+
+.fonctionnement, .restaurants, footer {
+  padding-left: 10px;
+}
+
+.info button {
+  margin-bottom: 30px;
+  border-radius: 25px;
+  color: white;
+  background: linear-gradient(to bottom, #FF79DA, #9356DC);
+  border: none;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.fonct-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.fonctionnement button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 80%;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.fonctionnement button .button-number {
+  position: absolute;
+  left: -14px;
+  background-color: #9356DC;
+  border-radius: 25px;
+  color: white;
+  padding: 4px 8px;
+  font-size: 14px;
+}
+.fonctionnement button i {
+  margin-left: 20px;
+  color: #7E7E7E;
+}
+.fonctionnement button p {
+  margin-left: 20px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.fonctionnement button #icone-store {
+  color: #9356DC;
+}
+
+.logo-footer {
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+/*# sourceMappingURL=main.css.map */

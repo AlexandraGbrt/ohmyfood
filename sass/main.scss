@@ -1,12 +1,13 @@
+
+@use 'variables' as *;
 @use 'mixins';
 @use 'header';
-// @use 'variables';
-// @use 'base';
 
-// @use 'buttons';
-// @use 'footer';
+@use 'cards';
+@use 'base';
+@use 'buttons';
+@use 'footer';
 
 
-.info{
-    @include mixins.center;
-  }
+
+

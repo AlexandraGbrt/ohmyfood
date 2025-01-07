@@ -1,32 +1,36 @@
 
+@use 'variables' as *;
+@use 'mixins' as *;
+
+
 header {
-    display: flex;
-    flex-direction: column;      
-    align-items: center;         
-    // height: 100vh;               
-    padding-top: 20px;           
+    @include center(column); 
+    font-family: $font-primary;              
   
     .logo-header {
-      max-width: 80%;            
-      margin-bottom: 20px;       
+      width: 50%;            
+      margin: 20px 0;       
     }
   
     .search-form {
-      display: flex;
-      align-items: center;       
-      justify-content: center;   
-      padding: 5px 15px;         
-      background-color: $form-bg-color;  
-      width: 100%;    
+      @include center(row);         
+      background-color: $form-color; 
+      width: 100%;  
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2),
+      0 4px 6px rgba(0, 0, 0, 0.2);
+     
   
         i {
-          font-size: 20px;          
-          margin-right: 10px;                
+          font-size: 15px; 
+          color: #353535;         
+          margin-right: 10px;              
         }
   
         form {
           display: flex;
           align-items: center;
+          color: $form-color;
+          
             
           input {
             padding: 10px;
@@ -35,7 +39,10 @@ header {
             max-width: 300px;         
             border: none;
             outline: none;             
-            background-color: $form-bg-color; 
+            background-color: $form-color; 
+            font-family: $font-primary;
+            
+           
           }
         }
     }

@@ -1,0 +1,56 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+
+.info button {
+    margin-bottom: 30px;
+    border-radius: 25px;
+    color: $text-secondary-color;
+    background: linear-gradient(to bottom, $button-first-color,$button-second-color);
+    border: none;
+    padding: 12px 18px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.fonct-btn {
+    @include center(column);
+    gap: 15px;
+    
+}
+
+.fonctionnement button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 80%;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+    .button-number {
+        position: absolute;
+        left: -14px;
+        background-color: $button-second-color;
+        border-radius: 25px;
+        color: $text-secondary-color;
+        padding: 4px 8px;
+        font-size: 14px;
+    }
+
+        i {
+            margin-left: 20px;
+            color: #7E7E7E;
+        }
+
+        p {
+            margin-left: 20px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        #icone-store {
+            color: $button-second-color;
+
+        }
+}

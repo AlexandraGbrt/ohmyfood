@@ -1,0 +1,39 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+
+html, body {
+    overflow-x: hidden;
+  }
+
+
+h1 {
+    font-size: 22px;
+    font-weight: 600;
+    }
+
+
+.info {
+    @include center(column);
+    font-family: $font-primary;
+    text-align: center;
+    background-color: $secondary-bg-color;
+    
+   h1 {
+    padding: 0 20px;
+   }
+
+    p {
+    font-size: 18px;
+    font-weight: 300;
+    padding: 0 20px;
+    }   
+}
+
+.fonctionnement, .restaurants, footer {
+    padding-left: 10px;
+}
