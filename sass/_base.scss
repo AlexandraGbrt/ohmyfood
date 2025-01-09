@@ -2,24 +2,28 @@
 @use 'mixins' as *;
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: $font-primary, sans-serif;
+    margin: 0;
+  
 }
 
+a {
+    text-decoration: none;
+  }
 
 html, body {
     overflow-x: hidden;
   }
 
-
 h1 {
     font-size: 22px;
     font-weight: 600;
     }
-
+    
+     
 
 .info {
     @include center(column);
-    font-family: $font-primary;
     text-align: center;
     background-color: $secondary-bg-color;
     
@@ -37,3 +41,16 @@ h1 {
 .fonctionnement, .restaurants, footer {
     padding-left: 10px;
 }
+
+.fonctionnement {
+    padding-bottom: 40px;
+}
+.restaurants {
+    background-color: $secondary-bg-color;
+    padding: 40px 0 70px 0;
+    
+    h1 {
+        padding-left: 10px;
+    }
+}
+

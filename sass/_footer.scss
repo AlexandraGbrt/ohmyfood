@@ -1,4 +1,37 @@
-.logo-footer {
-    width: 50%;            
-    margin-bottom: 20px;       
+@use 'variables' as *;
+
+footer {
+  background-color: $footer-bg-color;
+  color: $text-secondary-color;
+  text-decoration: none;
+  padding-bottom: 15px;
+  padding-left: 25px;
+ 
+    
+  .logo-footer {
+      width: 30%;            
+      margin-top: 20px; 
+      filter: invert(1);   
   }
+   
+  ul {
+    list-style-type: none;
+    padding: 0;
+    text-decoration: none;
+    
+    li{
+      padding-bottom: 5px;
+      font-size: 15px;
+      font-weight: 400;
+    }
+  }
+  i {
+    font-size: 12px;
+    padding-right: 10px;
+  }
+
+  a{
+    color: inherit;
+  }
+
+}

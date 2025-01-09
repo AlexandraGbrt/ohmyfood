@@ -4,8 +4,7 @@
 
 
 header {
-    @include center(column); 
-    font-family: $font-primary;              
+    @include center(column);             
   
     .logo-header {
       width: 50%;            
@@ -40,9 +39,6 @@ header {
             border: none;
             outline: none;             
             background-color: $form-color; 
-            font-family: $font-primary;
-            
-           
           }
         }
     }
