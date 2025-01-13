@@ -5,3 +5,14 @@
   flex-direction: $flex-direction;
 }
 
+@mixin shadow($horiz: 0px, $vert: 4px, $flou: 6px, $couleur: rgba(0, 0, 0, 0.1)) {
+  box-shadow: $horiz $vert $flou $couleur;
+}
+
+@mixin border-radius($rayon: 20px) {
+  border-radius: $rayon;
+}
+
+@mixin btn-gradient($button-first-color, $button-second-color) {
+  background: linear-gradient(to bottom, $button-first-color, $button-second-color);
+}

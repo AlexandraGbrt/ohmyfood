@@ -2,55 +2,61 @@
 @use 'mixins' as *;
 
 
+// INFO BUTTON // 
 .info button {
-    margin-bottom: 30px;
-    border-radius: 25px;
     color: $text-secondary-color;
-    background: linear-gradient(to bottom, $button-first-color,$button-second-color);
     border: none;
-    padding: 12px 18px;
-    font-size: 15px;
+    padding: 13px 19px;
+    font-size: 16px;
     font-weight: 500;
+    @include border-radius(25px);
+    @include btn-gradient($button-first-color, $button-second-color);
+    @include shadow(0px, 4px, 10px, rgba(0, 0, 0, 0.15));
 }
 
+
+
+// FONCTIONNEMENT BUTTON //
 .fonct-btn {
     @include center(column);
-    gap: 15px;
-    
-}
+    gap: 25px;
 
-.fonctionnement button {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 80%;
-    border-radius: 15px;
-    border: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 95%;
+        border: none;
+        position: relative;
+        padding: 10px 5px 10px 10px;
+        background-color: $secondary-bg-color;
+        @include border-radius(20px);
+        @include shadow(0px, 4px, 15px, rgba(0, 0, 0, 0.14));
 
-    .button-number {
-        position: absolute;
-        left: -14px;
-        background-color: $button-second-color;
-        border-radius: 25px;
-        color: $text-secondary-color;
-        padding: 4px 8px;
-        font-size: 14px;
-    }
+        .button-number {
+            position: absolute;
+            left: -12px;
+            background-color: $button-second-color;
+            border-radius: 25px;
+            color: $text-secondary-color;
+            padding: 4px 8px;
+            font-size: 15px;
+        }
 
-    i {
-        margin-left: 20px;
-        color: #7E7E7E;
-    }
+        i {
+            margin-left: 25px;
+            color: $secondary-icon-color;
+            font-size: 19px;
+        }
 
-    p {
-        margin-left: 20px;
-        font-size: 16px;
-        font-weight: 500;
-    }
-       
-    #icone-store {
-        color: $button-second-color;
+        p {
+            margin-left: 25px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        #icone-store {
+            color: $button-second-color;
+        }
     }
 }

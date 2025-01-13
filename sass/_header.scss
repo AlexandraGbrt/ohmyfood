@@ -1,47 +1,41 @@
-
 @use 'variables' as *;
 @use 'mixins' as *;
 
 
 header {
-    @include center(column);             
-  
-    .logo-header {
-      width: 50%;            
-      margin: 20px 0;       
+  @include center(column);
+  @include shadow(0px, 4px, 6px, rgba(0, 0, 0, 0.25));
+
+  .logo-header {
+    width: 50%;
+    margin: 20px 0;
+
+  }
+
+  .search-form {
+    @include center(row);
+    background-color: $form-color;
+    width: 100%;
+    padding: 20px;
+    @include shadow(0px, 4px, 6px, rgba(0, 0, 0, 0.25));
+    z-index: 1;
+
+    i {
+      font-size: 17px;
+      color: $primary-icon-color;
     }
-  
-    .search-form {
-      @include center(row);         
-      background-color: $form-color; 
-      width: 100%;  
-      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2),
-      0 4px 6px rgba(0, 0, 0, 0.2);
-     
-  
-        i {
-          font-size: 15px; 
-          color: #353535;         
-          margin-right: 10px;              
-        }
-  
-        form {
-          display: flex;
-          align-items: center;
-          color: $form-color;
-          
-            
-          input {
-            padding: 10px;
-            font-size: 16px;
-            width: 100%;              
-            max-width: 300px;         
-            border: none;
-            outline: none;             
-            background-color: $form-color; 
-          }
-        }
+
+    form {
+      color: $form-color;
+
+      input {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        text-align: center;
+        color: $text-third-color;
+        background-color: $form-color;
+      }
     }
+  }
 }
-  
- 

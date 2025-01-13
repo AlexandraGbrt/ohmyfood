@@ -3,6 +3,7 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
 }
 header .logo-header {
   width: 50%;
@@ -15,47 +16,51 @@ header .search-form {
   flex-direction: row;
   background-color: #EAEAEA;
   width: 100%;
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+  z-index: 1;
 }
 header .search-form i {
-  font-size: 15px;
+  font-size: 17px;
   color: #353535;
-  margin-right: 10px;
 }
 header .search-form form {
-  display: flex;
-  align-items: center;
   color: #EAEAEA;
 }
 header .search-form form input {
-  padding: 10px;
   font-size: 16px;
-  width: 100%;
-  max-width: 300px;
   border: none;
   outline: none;
+  text-align: center;
+  color: #353535;
   background-color: #EAEAEA;
 }
 
 .restaurants-cards {
   width: 100%;
-}
-.restaurants-cards .restaurants-cards a {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  width: 90%;
+  gap: 17px;
 }
 .restaurants-cards .card {
   background-color: white;
+  position: relative;
   border-radius: 20px;
 }
 .restaurants-cards .card img {
   width: 100%;
   height: 150px;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-radius: 15px 15px 0 0;
   object-fit: cover;
+}
+.restaurants-cards .card .alert {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #99E2D0;
+  color: #008766;
+  padding: 7px 9px;
+  font-size: 14px;
 }
 .restaurants-cards .card-content {
   padding-left: 15px;
@@ -77,8 +82,8 @@ header .search-form form input {
 .restaurants-cards .card-content .card-rating {
   padding-right: 15px;
 }
-.restaurants-cards i {
-  font-size: 22px;
+.restaurants-cards .card-content .card-rating i {
+  font-size: 23px;
 }
 
 body {
@@ -90,13 +95,14 @@ a {
   text-decoration: none;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
 h1 {
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .info {
@@ -105,42 +111,38 @@ h1 {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  background-color: #f3f3f3;
+  background-color: #f6f6f6;
+  gap: 25px;
+  padding-top: 30px;
+  padding-bottom: 50px;
 }
 .info h1 {
-  padding: 0 20px;
+  padding: 0 50px;
+  margin: 0;
 }
 .info p {
   font-size: 18px;
   font-weight: 300;
-  padding: 0 20px;
+  margin: 0;
 }
 
-.fonctionnement, .restaurants, footer {
-  padding-left: 10px;
-}
-
-.fonctionnement {
-  padding-bottom: 40px;
+.main-section {
+  padding: 40px 20px 70px 20px;
 }
 
 .restaurants {
-  background-color: #f3f3f3;
-  padding: 40px 0 70px 0;
-}
-.restaurants h1 {
-  padding-left: 10px;
+  background-color: #f6f6f6;
 }
 
 .info button {
-  margin-bottom: 30px;
-  border-radius: 25px;
   color: white;
-  background: linear-gradient(to bottom, #FF79DA, #9356DC);
   border: none;
-  padding: 12px 18px;
-  font-size: 15px;
+  padding: 13px 19px;
+  font-size: 16px;
   font-weight: 500;
+  border-radius: 25px;
+  background: linear-gradient(to bottom, #FF79DA, #9356DC);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .fonct-btn {
@@ -148,38 +150,40 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 15px;
+  gap: 25px;
 }
-
-.fonctionnement button {
+.fonct-btn button {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 80%;
-  border-radius: 15px;
+  width: 95%;
   border: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
+  padding: 10px 5px 10px 10px;
+  background-color: #f6f6f6;
+  border-radius: 20px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.14);
 }
-.fonctionnement button .button-number {
+.fonct-btn button .button-number {
   position: absolute;
-  left: -14px;
+  left: -12px;
   background-color: #9356DC;
   border-radius: 25px;
   color: white;
   padding: 4px 8px;
-  font-size: 14px;
+  font-size: 15px;
 }
-.fonctionnement button i {
-  margin-left: 20px;
+.fonct-btn button i {
+  margin-left: 25px;
   color: #7E7E7E;
+  font-size: 19px;
 }
-.fonctionnement button p {
-  margin-left: 20px;
+.fonct-btn button p {
+  margin-left: 25px;
   font-size: 16px;
   font-weight: 500;
 }
-.fonctionnement button #icone-store {
+.fonct-btn button #icone-store {
   color: #9356DC;
 }
 
@@ -187,27 +191,28 @@ footer {
   background-color: #353535;
   color: white;
   text-decoration: none;
-  padding-bottom: 15px;
-  padding-left: 25px;
+  padding: 22px 25px 22px 25px;
 }
 footer .logo-footer {
   width: 30%;
-  margin-top: 20px;
   filter: invert(1);
 }
 footer ul {
   list-style-type: none;
   padding: 0;
+  margin-bottom: 0;
   text-decoration: none;
 }
 footer ul li {
-  padding-bottom: 5px;
-  font-size: 15px;
-  font-weight: 400;
+  padding-bottom: 7px;
+  font-size: 16px;
 }
 footer i {
   font-size: 12px;
-  padding-right: 10px;
+  padding-right: 11px;
+}
+footer .fa-utensils {
+  padding-right: 15px;
 }
 footer a {
   color: inherit;
