@@ -7,6 +7,38 @@
   flex-direction: column;
   gap: 17px;
 
+  a {
+    .fa-heart {
+      // pointer-events: none;
+      position: absolute;
+      right: 15px;
+      bottom: 30px;
+      font-size: 23px;
+    }
+
+    .empty-heart {
+      transition: opacity 0.3s ease;
+    }
+
+    .full-heart {
+      color: transparent; // Laisse apparaitre le dégradé au survol
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    &:hover {
+      .empty-heart {
+        opacity: 0;
+      }
+
+      .full-heart {
+        opacity: 1;
+        background-clip: text;
+        background-image: linear-gradient($button-first-color, $button-second-color);
+      }
+    }
+  }
+
   .card {
     background-color: white;
     position: relative;
@@ -51,15 +83,5 @@
         font-weight: 300;
       }
     }
-
-    .card-rating {
-      padding-right: 15px;
-
-      i {
-        font-size: 23px;
-      }
-    }
   }
-
-
 }

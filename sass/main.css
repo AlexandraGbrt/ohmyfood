@@ -42,6 +42,28 @@ header .search-form form input {
   flex-direction: column;
   gap: 17px;
 }
+.restaurants-cards a .fa-heart {
+  position: absolute;
+  right: 15px;
+  bottom: 30px;
+  font-size: 23px;
+}
+.restaurants-cards a .empty-heart {
+  transition: opacity 0.3s ease;
+}
+.restaurants-cards a .full-heart {
+  color: transparent;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.restaurants-cards a:hover .empty-heart {
+  opacity: 0;
+}
+.restaurants-cards a:hover .full-heart {
+  opacity: 1;
+  background-clip: text;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+}
 .restaurants-cards .card {
   background-color: white;
   position: relative;
@@ -78,12 +100,6 @@ header .search-form form input {
   margin-top: 4px;
   font-size: 17px;
   font-weight: 300;
-}
-.restaurants-cards .card-content .card-rating {
-  padding-right: 15px;
-}
-.restaurants-cards .card-content .card-rating i {
-  font-size: 23px;
 }
 
 body {
@@ -142,7 +158,12 @@ h1 {
   font-weight: 500;
   border-radius: 25px;
   background: linear-gradient(to bottom, #FF79DA, #9356DC);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+  transition: filter 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+.info button:hover {
+  filter: brightness(115%);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
 }
 
 .fonct-btn {
