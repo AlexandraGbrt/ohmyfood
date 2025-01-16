@@ -9,6 +9,11 @@ header .logo-header {
   width: 50%;
   margin: 20px 0;
 }
+@media (min-width: 768px) {
+  header .logo-header {
+    width: 15%;
+  }
+}
 header .search-form {
   display: flex;
   justify-content: center;
@@ -48,21 +53,24 @@ header .search-form form input {
   bottom: 30px;
   font-size: 23px;
 }
+.restaurants-cards a .empty-heart,
+.restaurants-cards a .full-heart {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
 .restaurants-cards a .empty-heart {
-  transition: opacity 0.3s ease;
+  opacity: 1;
 }
 .restaurants-cards a .full-heart {
   color: transparent;
   opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  background-clip: text;
+  background-image: linear-gradient(#FF79DA, #9356DC);
 }
 .restaurants-cards a:hover .empty-heart {
   opacity: 0;
 }
 .restaurants-cards a:hover .full-heart {
   opacity: 1;
-  background-clip: text;
-  background-image: linear-gradient(#FF79DA, #9356DC);
 }
 .restaurants-cards .card {
   background-color: white;
@@ -72,8 +80,8 @@ header .search-form form input {
 .restaurants-cards .card img {
   width: 100%;
   height: 150px;
-  border-radius: 15px 15px 0 0;
   object-fit: cover;
+  border-radius: 15px 15px 0 0;
 }
 .restaurants-cards .card .alert {
   position: absolute;
@@ -83,6 +91,12 @@ header .search-form form input {
   color: #008766;
   padding: 7px 9px;
   font-size: 14px;
+}
+@media (min-width: 768px) {
+  .restaurants-cards .card {
+    width: 490px;
+    height: 250px;
+  }
 }
 .restaurants-cards .card-content {
   padding-left: 15px;
@@ -100,6 +114,13 @@ header .search-form form input {
   margin-top: 4px;
   font-size: 17px;
   font-weight: 300;
+}
+@media (min-width: 768px) {
+  .restaurants-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+  }
 }
 
 body {
@@ -145,6 +166,12 @@ h1 {
 .main-section {
   padding: 40px 20px 70px 20px;
 }
+@media (min-width: 768px) {
+  .main-section {
+    padding-left: 175px;
+    padding-right: 175px;
+  }
+}
 
 .restaurants {
   background-color: #f6f6f6;
@@ -158,12 +185,12 @@ h1 {
   font-weight: 500;
   border-radius: 25px;
   background: linear-gradient(to bottom, #FF79DA, #9356DC);
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
   transition: filter 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 .info button:hover {
-  filter: brightness(115%);
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+  filter: brightness(110%);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
 }
 
 .fonct-btn {
@@ -171,7 +198,7 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 25px;
+  gap: 24px;
 }
 .fonct-btn button {
   display: flex;
@@ -207,6 +234,16 @@ h1 {
 .fonct-btn button #icone-store {
   color: #9356DC;
 }
+@media (min-width: 768px) {
+  .fonct-btn button {
+    width: 335px;
+  }
+}
+@media (min-width: 768px) {
+  .fonct-btn {
+    flex-direction: row;
+  }
+}
 
 footer {
   background-color: #353535;
@@ -218,15 +255,37 @@ footer .logo-footer {
   width: 30%;
   filter: invert(1);
 }
+@media (min-width: 768px) {
+  footer .logo-footer {
+    width: 6%;
+  }
+}
 footer ul {
   list-style-type: none;
   padding: 0;
   margin-bottom: 0;
   text-decoration: none;
 }
-footer ul li {
+footer ul .footer-duo li {
   padding-bottom: 7px;
   font-size: 16px;
+}
+@media (min-width: 768px) {
+  footer ul .footer-duo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+}
+@media (min-width: 768px) {
+  footer ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    padding-right: 70px;
+  }
 }
 footer i {
   font-size: 12px;
@@ -237,6 +296,15 @@ footer .fa-utensils {
 }
 footer a {
   color: inherit;
+}
+@media (min-width: 768px) {
+  footer {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 20px;
+    padding-right: 40px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

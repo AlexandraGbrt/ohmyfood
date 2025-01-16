@@ -43,6 +43,10 @@ h1 {
 .main-section {
     padding: 40px 20px 70px 20px;
 
+    @media (min-width: 768px) {
+        padding-left: 175px;
+        padding-right: 175px;
+    }
 }
 
 .restaurants {

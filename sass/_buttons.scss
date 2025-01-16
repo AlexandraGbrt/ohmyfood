@@ -11,12 +11,12 @@
     font-weight: 500;
     @include border-radius(25px);
     @include btn-gradient($button-first-color, $button-second-color);
-    @include shadow(0px, 4px, 6px, rgba(0, 0, 0, 0.15));
+    @include shadow(0px, 4px, 10px, rgba(0, 0, 0, 0.15));
     transition: filter 0.3s ease-out, box-shadow 0.3s ease-out;
 
     &:hover {
-        filter: brightness(115%);
-        box-shadow : 0px 6px 10px rgba(0, 0, 0, 0.25);
+        filter: brightness(110%);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
     }
 }
 
@@ -24,7 +24,7 @@
 // FONCTIONNEMENT BUTTON //
 .fonct-btn {
     @include center(column);
-    gap: 25px;
+    gap: 24px;
 
     button {
         display: flex;
@@ -63,5 +63,15 @@
         #icone-store {
             color: $button-second-color;
         }
+
+        @media (min-width: 768px) {
+            width: 335px;
+            
+        }
+    }
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        
     }
 }

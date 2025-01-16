@@ -1,4 +1,6 @@
 @use 'variables' as *;
+@use 'mixins' as *;
+
 
 footer {
   background-color: $footer-bg-color;
@@ -6,9 +8,14 @@ footer {
   text-decoration: none;
   padding: 22px 25px 22px 25px;
 
+
   .logo-footer {
     width: 30%;
     filter: invert(1);
+
+    @media (min-width: 768px) {
+      width: 6%;
+    }
   }
 
   ul {
@@ -17,10 +24,28 @@ footer {
     margin-bottom: 0;
     text-decoration: none;
 
-    li {
-      padding-bottom: 7px;
-      font-size: 16px;
-      // font-weight: 500;
+    .footer-duo {
+     
+      li {
+        padding-bottom: 7px;
+        font-size: 16px;
+        // font-weight: 500;
+      }
+
+      @media (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+      padding-right: 70px;
     }
   }
 
@@ -36,4 +61,12 @@ footer {
   a {
     color: inherit;
   }
-}
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 20px;
+    padding-right: 40px;
+  }
+} 
