@@ -2,8 +2,8 @@
 @use 'mixins' as *;
 
 
-// INFO BUTTON // 
-.info button {
+// INFO ET COMMAND BUTTON // 
+.info button, .command-btn {
     color: $text-secondary-color;
     border: none;
     padding: 13px 19px;
@@ -30,7 +30,8 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        width: 95%;
+        width: 100%;
+        max-width: 335px;
         border: none;
         position: relative;
         padding: 10px 5px 10px 10px;
@@ -65,13 +66,51 @@
         }
 
         @media (min-width: 768px) {
-            width: 335px;
-            
+            // width: 230px;
         }
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 1200px) {
         flex-direction: row;
-        
+        // width: 95%;
     }
 }
+
+
+.card-rating {
+
+    .fa-heart {
+      // pointer-events: none;
+      position: absolute;
+      right: 15px;
+      bottom: 30px;
+      font-size: 23px;
+    }
+
+    .empty-heart,
+    .full-heart {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .empty-heart {
+      opacity: 1;
+    }
+
+    .full-heart {
+      color: transparent;
+      opacity: 0;
+      background-clip: text;
+      background-image: linear-gradient($button-first-color, $button-second-color);
+    }
+
+    &:hover {
+      .empty-heart {
+        opacity: 0;
+      }
+
+      .full-heart {
+        opacity: 1; }
+    }
+
+}
+  

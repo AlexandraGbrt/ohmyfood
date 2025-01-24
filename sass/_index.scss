@@ -20,7 +20,7 @@ h1 {
     font-weight: 700;
 }
 
-.info {
+.info  {
     @include center(column);
     text-align: center;
     background-color: $secondary-bg-color;
@@ -31,6 +31,11 @@ h1 {
     h1 {
         padding: 0 50px;
         margin: 0;
+
+        @media (min-width: 768px) {
+            font-size: 40px;
+            font-weight: 700;
+        }
     }
 
     p {
@@ -52,3 +57,4 @@ h1 {
 .restaurants {
     background-color: $secondary-bg-color;
 }
+

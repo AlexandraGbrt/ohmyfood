@@ -12,7 +12,7 @@ header {
 
     @media (min-width: 768px) {
       width: 15%;
-  }
+    }
 
   }
 
@@ -41,5 +41,31 @@ header {
         background-color: $form-color;
       }
     }
+  }
+}
+
+.header-menu {
+  @include center(row);
+  position: relative;
+
+  i {
+    color: black;
+    position: absolute;
+    left: 24px;
+  }
+
+  .logo-header {
+    margin-left: 50px;
+  }
+}
+
+.restaurant-header {
+  position: relative;
+  width: 100%;
+
+  img {
+    width: 100%; 
+    height: auto;
+    display: block; /* Évite l'espace blanc sous l'image */
   }
 }

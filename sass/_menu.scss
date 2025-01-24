@@ -1,0 +1,38 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.menu {
+
+    position: relative;
+
+    .menu-content {
+        position: relative;
+        background-color: $secondary-bg-color;
+        padding: 20px;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        margin-top: -30px;
+        /* Permet de faire dépasser la section sur l'image */
+        z-index: 1;
+        /* Assure que le contenu du menu est au-dessus de l'image */
+        
+
+
+        .menu-restaurant-title {
+            position: relative;
+            // @include center(row);
+            // justify-content: space-between;
+            font-family: $font-secondary;
+            font-size: 28px;
+
+            // h3 {
+            //     margin: 0;
+            // }
+            .card-rating {
+                i {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}

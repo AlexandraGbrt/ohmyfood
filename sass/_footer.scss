@@ -14,7 +14,11 @@ footer {
     filter: invert(1);
 
     @media (min-width: 768px) {
-      width: 6%;
+      width: 10%;
+      margin-top: 20px;
+    }
+    @media (min-width: 1200px) {
+      width: 8%;
     }
   }
 
@@ -24,7 +28,7 @@ footer {
     margin-bottom: 0;
     text-decoration: none;
 
-    .footer-duo {
+    .footer-group {
      
       li {
         padding-bottom: 7px;
@@ -44,6 +48,11 @@ footer {
       display: flex;
       flex-direction: row;
       align-items: center;
+      gap: 20px;
+      padding-right: 20px;
+      margin-top: 30px;
+    }
+    @media (min-width: 1200px) {
       gap: 40px;
       padding-right: 70px;
     }
@@ -63,6 +72,14 @@ footer {
   }
 
   @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 20px;
+    padding-right: 40px;
+    
+  }
+  @media (min-width: 1200px) {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
