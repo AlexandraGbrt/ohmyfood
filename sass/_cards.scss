@@ -8,38 +8,6 @@
   gap: 17px;
 
   a {
-  //   .fa-heart {
-  //     // pointer-events: none;
-  //     position: absolute;
-  //     right: 15px;
-  //     bottom: 30px;
-  //     font-size: 23px;
-  //   }
-
-  //   .empty-heart,
-  //   .full-heart {
-  //     transition: opacity 0.3s ease, transform 0.3s ease; // Regroupe les transitions
-  //   }
-
-  //   .empty-heart {
-  //     opacity: 1;
-  //   }
-
-  //   .full-heart {
-  //     color: transparent;
-  //     opacity: 0;
-  //     background-clip: text;
-  //     background-image: linear-gradient($button-first-color, $button-second-color);
-  //   }
-
-  //   &:hover {
-  //     .empty-heart {
-  //       opacity: 0;
-  //     }
-
-  //     .full-heart {
-  //       opacity: 1; }
-  //   }
 
     @media (min-width: 768px) {
       width: 340px;
@@ -70,7 +38,7 @@
       top: 10px;
       right: 10px;
       background-color: $button-third-color;
-      color: #008766;
+      color: $button-alert-color;
       padding: 7px 9px;
       font-size: 14px;
     }
@@ -78,6 +46,7 @@
 
   .card-content {
     padding-left: 15px;
+    padding-right: 25px;
     color: $text-primary-color;
     display: flex;
     flex-direction: row;

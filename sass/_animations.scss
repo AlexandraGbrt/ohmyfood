@@ -1,0 +1,218 @@
+@use 'variables' as *;
+
+/* Définition des couleurs */
+:root {
+  --button-first-color: #FF79DA;
+  --button-second-color: #9356DC;
+  --button-third-color: #99E2D0;
+  --button-alert-color: #008766;
+}
+
+// /* Loader */
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Fond semi-transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 3s ease-in-out forwards;
+}
+
+/* Cercle de rotation avec dégradé */
+.loader::after {
+  content: '';
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 10px solid transparent;
+  border-top-color: var(--button-first-color);
+  border-right-color: var(--button-second-color);
+  border-bottom-color: var(--button-third-color);
+  animation: spin 3s linear forwards;
+  /* La rotation s'arrête après 3s */
+}
+
+
+/* Animation de rotation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation pour faire disparaître le loader après un délai */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Contenu principal qui sera visible après le loader */
+.content {
+  display: none;
+  /* Masqué tant que le loader est visible */
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1s forwards 3s;
+  /* Affiche le contenu après le délai */
+}
+
+/* Animation de fade-in pour le contenu */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+//   LOADER 3 POINTS //
+// html : <div class="loader">
+//   <div class="dot"></div>
+//   <div class="dot"></div>
+//   <div class="dot"></div>
+// </div>
+
+
+//   .loader {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//   }
+
+//   .dot {
+//     width: 15px;
+//     height: 15px;
+//     margin: 5px;
+//     border-radius: 50%;
+//     background-color: #3498db;
+//     animation: bounce 1.5s infinite ease-in-out;
+//   }
+
+//   .dot:nth-child(2) {
+//     animation-delay: 0.3s;
+//   }
+
+//   .dot:nth-child(3) {
+//     animation-delay: 0.6s;
+//   }
+
+//   @keyframes bounce {
+//     0%, 100% {
+//       transform: translateY(0);
+//     }
+//     50% {
+//       transform: translateY(-20px);
+//     }
+//   }
+
+
+// LOADER 3 CERCLES 
+
+
+// html 
+// <div class="loader">
+//   <div class="circle outer"></div>
+//   <div class="circle middle"></div>
+//   <div class="circle inner"></div>
+// </div>
+
+// .loader {
+//     position: relative;
+//     width: 100px;
+//     height: 100px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//   }
+
+//   .circle {
+//     position: absolute;
+//     border-radius: 50%;
+//     border: 5px solid transparent;
+//     animation: spin 2s linear infinite;
+//   }
+
+//   .outer {
+//     width: 100px;
+//     height: 100px;
+//     border-top-color: #FF79DA;
+//     border-right-color: #9356DC;
+//     border-bottom-color: #99E2D0;
+//   }
+
+//   .middle {
+//     width: 80px;
+//     height: 80px;
+//     border-top-color: #9356DC;
+//     border-right-color: #99E2D0;
+//     border-bottom-color: #FF79DA;
+//     animation-duration: 1.5s;
+//   }
+
+//   .inner {
+//     width: 60px;
+//     height: 60px;
+//     border-top-color: #99E2D0;
+//     border-right-color: #FF79DA;
+//     border-bottom-color: #9356DC;
+//     animation-duration: 1s;
+//   }
+
+//   @keyframes spin {
+//     0% { transform: rotate(0deg); }
+//     100% { transform: rotate(360deg); }
+//   }
+
+//
+
+
+
+
+// ANIMATIONS MENU //
+
+/* Masque initial des sections */
+.menu-list {
+  opacity: 0;
+  transform: translateX(40px);
+  animation: groupAppear 1s ease-out forwards;
+}
+
+/* Animation pour chaque groupe (Entrées, Plats, Desserts) */
+@keyframes groupAppear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Délai d'animation pour chaque groupe */
+.entrees {
+  animation-delay: 0s;
+}
+
+.plats {
+  animation-delay: 0.5s;
+}
+
+.desserts {
+  animation-delay: 1s;
+}

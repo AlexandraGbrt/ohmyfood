@@ -54,9 +54,6 @@ header .search-form form input {
   position: absolute;
   left: 24px;
 }
-.header-menu .logo-header {
-  margin-left: 50px;
-}
 
 .restaurant-header {
   position: relative;
@@ -65,7 +62,13 @@ header .search-form form input {
 .restaurant-header img {
   width: 100%;
   height: auto;
-  display: block; /* Évite l'espace blanc sous l'image */
+}
+@media (min-width: 768px) {
+  .restaurant-header img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+  }
 }
 
 .restaurants-cards {
@@ -108,6 +111,7 @@ header .search-form form input {
 }
 .restaurants-cards .card-content {
   padding-left: 15px;
+  padding-right: 25px;
   color: black;
   display: flex;
   flex-direction: row;
@@ -157,6 +161,12 @@ h1 {
   font-weight: 700;
 }
 
+@media (min-width: 768px) {
+  h2 {
+    padding-left: 100px;
+  }
+}
+
 .info {
   display: flex;
   justify-content: center;
@@ -204,24 +214,102 @@ h1 {
 .menu .menu-content {
   position: relative;
   background-color: #f6f6f6;
-  padding: 20px;
+  padding: 30px 13px 20px 13px;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
-  margin-top: -30px;
-  /* Permet de faire dépasser la section sur l'image */
-  z-index: 1;
-  /* Assure que le contenu du menu est au-dessus de l'image */
+  margin-top: -45px;
 }
 .menu .menu-content .menu-restaurant-title {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.menu .menu-content .menu-restaurant-title h1 {
+  margin: 0;
   font-family: "Shrikhand", sans-serif;
   font-size: 28px;
+  font-weight: 400;
+  padding-right: 24px;
 }
 .menu .menu-content .menu-restaurant-title .card-rating i {
-  font-size: 30px;
+  font-size: 28px;
+}
+@media (min-width: 768px) {
+  .menu .menu-content .menu-restaurant-title {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+}
+.menu .menu-content .section-menu {
+  display: flex;
+  flex-direction: column;
+}
+.menu .menu-content .section-menu .section-title {
+  border-bottom: 3px solid #99E2D0;
+  width: 40px;
+  margin-left: 10px;
+  margin-top: 40px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 300;
+  padding-bottom: 6px;
+  text-align: left;
+}
+.menu .menu-content .section-menu .menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.menu .menu-content .section-menu .menu-list .menu-item {
+  padding: 12px 15px 12px 15px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.14);
+}
+.menu .menu-content .section-menu .menu-list .menu-item .card-txt .card-title {
+  margin: 0;
+}
+.menu .menu-content .section-menu .menu-list .menu-item .card-txt .card-title h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+.menu .menu-content .section-menu .menu-list .menu-item .card-txt .card-subtitle {
+  display: flex;
+  justify-content: space-between;
+}
+.menu .menu-content .section-menu .menu-list .menu-item .card-txt .card-subtitle p {
+  font-size: 15px;
+  font-weight: 300;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.menu .menu-content .section-menu button {
+  align-self: center;
+  margin: 40px auto 20px auto;
+  padding: 16px 49px;
+}
+@media (min-width: 768px) {
+  .menu .menu-content .section-menu {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 768px) {
+  .menu .menu-content {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
-.info button, .command-btn {
+.info button,
+.command-btn {
   color: white;
   border: none;
   padding: 13px 19px;
@@ -232,7 +320,8 @@ h1 {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
   transition: filter 0.3s ease-out, box-shadow 0.3s ease-out;
 }
-.info button:hover, .command-btn:hover {
+.info button:hover,
+.command-btn:hover {
   filter: brightness(110%);
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
 }
@@ -285,10 +374,11 @@ h1 {
   }
 }
 
+.card-rating {
+  position: relative;
+  cursor: pointer;
+}
 .card-rating .fa-heart {
-  position: absolute;
-  right: 15px;
-  bottom: 30px;
   font-size: 23px;
 }
 .card-rating .empty-heart,
@@ -296,13 +386,21 @@ h1 {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 .card-rating .empty-heart {
-  opacity: 1;
+  color: black;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
 }
 .card-rating .full-heart {
-  color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
   opacity: 0;
-  background-clip: text;
-  background-image: linear-gradient(#FF79DA, #9356DC);
+  transition: opacity 0.4s ease;
+  z-index: 0;
+  background: linear-gradient(#FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .card-rating:hover .empty-heart {
   opacity: 0;
@@ -393,6 +491,108 @@ footer a {
     gap: 20px;
     padding-right: 40px;
   }
+}
+
+/* Définition des couleurs */
+:root {
+  --button-first-color: #FF79DA;
+  --button-second-color: #9356DC;
+  --button-third-color: #99E2D0;
+  --button-alert-color: #008766;
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Fond semi-transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 3s ease-in-out forwards;
+}
+
+/* Cercle de rotation avec dégradé */
+.loader::after {
+  content: "";
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 10px solid transparent;
+  border-top-color: var(--button-first-color);
+  border-right-color: var(--button-second-color);
+  border-bottom-color: var(--button-third-color);
+  animation: spin 3s linear forwards;
+  /* La rotation s'arrête après 3s */
+}
+
+/* Animation de rotation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Animation pour faire disparaître le loader après un délai */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+/* Contenu principal qui sera visible après le loader */
+.content {
+  display: none;
+  /* Masqué tant que le loader est visible */
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1s forwards 3s;
+  /* Affiche le contenu après le délai */
+}
+
+/* Animation de fade-in pour le contenu */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Masque initial des sections */
+.menu-list {
+  opacity: 0;
+  transform: translateX(40px);
+  animation: groupAppear 1s ease-out forwards;
+}
+
+/* Animation pour chaque groupe (Entrées, Plats, Desserts) */
+@keyframes groupAppear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Délai d'animation pour chaque groupe */
+.entrees {
+  animation-delay: 0s;
+}
+
+.plats {
+  animation-delay: 0.5s;
+}
+
+.desserts {
+  animation-delay: 1s;
 }
 
 /*# sourceMappingURL=main.css.map */

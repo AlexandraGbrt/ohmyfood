@@ -3,114 +3,118 @@
 
 
 // INFO ET COMMAND BUTTON // 
-.info button, .command-btn {
-    color: $text-secondary-color;
-    border: none;
-    padding: 13px 19px;
-    font-size: 16px;
-    font-weight: 500;
-    @include border-radius(25px);
-    @include btn-gradient($button-first-color, $button-second-color);
-    @include shadow(0px, 4px, 10px, rgba(0, 0, 0, 0.15));
-    transition: filter 0.3s ease-out, box-shadow 0.3s ease-out;
+.info button,
+.command-btn {
+  color: $text-secondary-color;
+  border: none;
+  padding: 13px 19px;
+  font-size: 16px;
+  font-weight: 500;
+  @include border-radius(25px);
+  @include btn-gradient($button-first-color, $button-second-color);
+  @include shadow(0px, 4px, 10px, rgba(0, 0, 0, 0.15));
+  transition: filter 0.3s ease-out, box-shadow 0.3s ease-out;
 
-    &:hover {
-        filter: brightness(110%);
-        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
-    }
+  &:hover {
+    filter: brightness(110%);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
+  }
 }
 
 
 // FONCTIONNEMENT BUTTON //
 .fonct-btn {
-    @include center(column);
-    gap: 24px;
+  @include center(column);
+  gap: 24px;
 
-    button {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        width: 100%;
-        max-width: 335px;
-        border: none;
-        position: relative;
-        padding: 10px 5px 10px 10px;
-        background-color: $secondary-bg-color;
-        @include border-radius(20px);
-        @include shadow(0px, 4px, 15px, rgba(0, 0, 0, 0.14));
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 335px;
+    border: none;
+    position: relative;
+    padding: 10px 5px 10px 10px;
+    background-color: $secondary-bg-color;
+    @include border-radius(20px);
+    @include shadow(0px, 4px, 15px, rgba(0, 0, 0, 0.14));
 
-        .button-number {
-            position: absolute;
-            left: -12px;
-            background-color: $button-second-color;
-            border-radius: 25px;
-            color: $text-secondary-color;
-            padding: 4px 8px;
-            font-size: 15px;
-        }
-
-        i {
-            margin-left: 25px;
-            color: $secondary-icon-color;
-            font-size: 19px;
-        }
-
-        p {
-            margin-left: 25px;
-            font-size: 16px;
-            font-weight: 500;
-        }
-
-        #icone-store {
-            color: $button-second-color;
-        }
-
-        @media (min-width: 768px) {
-            // width: 230px;
-        }
+    .button-number {
+      position: absolute;
+      left: -12px;
+      background-color: $button-second-color;
+      border-radius: 25px;
+      color: $text-secondary-color;
+      padding: 4px 8px;
+      font-size: 15px;
     }
 
-    @media (min-width: 1200px) {
-        flex-direction: row;
-        // width: 95%;
+    i {
+      margin-left: 25px;
+      color: $secondary-icon-color;
+      font-size: 19px;
     }
+
+    p {
+      margin-left: 25px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    #icone-store {
+      color: $button-second-color;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    flex-direction: row;
+  }
 }
 
+
+// BOUTTON COEUR //
 
 .card-rating {
+  position: relative;
+  cursor: pointer;
+ 
+  .fa-heart {
+    // pointer-events: none;
+    font-size: 23px;
+  }
 
-    .fa-heart {
-      // pointer-events: none;
-      position: absolute;
-      right: 15px;
-      bottom: 30px;
-      font-size: 23px;
-    }
+  .empty-heart,
+  .full-heart {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
 
-    .empty-heart,
-    .full-heart {
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
+  .empty-heart {
+    color: black;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+  }
 
+  .full-heart {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+    background: linear-gradient($button-first-color, $button-second-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &:hover {
     .empty-heart {
+      opacity: 0;
+    }
+
+    .full-heart {
       opacity: 1;
     }
-
-    .full-heart {
-      color: transparent;
-      opacity: 0;
-      background-clip: text;
-      background-image: linear-gradient($button-first-color, $button-second-color);
-    }
-
-    &:hover {
-      .empty-heart {
-        opacity: 0;
-      }
-
-      .full-heart {
-        opacity: 1; }
-    }
-
+  }
 }
-  
