@@ -104,7 +104,7 @@
     transition: opacity 0.4s ease;
     z-index: 0;
     background: linear-gradient($button-first-color, $button-second-color);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 

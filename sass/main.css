@@ -161,12 +161,6 @@ h1 {
   font-weight: 700;
 }
 
-@media (min-width: 768px) {
-  h2 {
-    padding-left: 100px;
-  }
-}
-
 .info {
   display: flex;
   justify-content: center;
@@ -206,6 +200,11 @@ h1 {
 
 .restaurants {
   background-color: #f6f6f6;
+}
+@media (min-width: 768px) {
+  .restaurants h2 {
+    padding-left: 100px;
+  }
 }
 
 .menu {
@@ -399,7 +398,7 @@ h1 {
   transition: opacity 0.4s ease;
   z-index: 0;
   background: linear-gradient(#FF79DA, #9356DC);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .card-rating:hover .empty-heart {
@@ -508,7 +507,6 @@ footer a {
   width: 100vw;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.8);
-  /* Fond semi-transparent */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -527,7 +525,6 @@ footer a {
   border-right-color: var(--button-second-color);
   border-bottom-color: var(--button-third-color);
   animation: spin 3s linear forwards;
-  /* La rotation s'arrête après 3s */
 }
 
 /* Animation de rotation */
@@ -552,11 +549,9 @@ footer a {
 /* Contenu principal qui sera visible après le loader */
 .content {
   display: none;
-  /* Masqué tant que le loader est visible */
   text-align: center;
   opacity: 0;
   animation: fadeIn 1s forwards 3s;
-  /* Affiche le contenu après le délai */
 }
 
 /* Animation de fade-in pour le contenu */

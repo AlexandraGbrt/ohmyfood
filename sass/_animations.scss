@@ -16,7 +16,6 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.8);
-  /* Fond semi-transparent */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,7 +34,6 @@
   border-right-color: var(--button-second-color);
   border-bottom-color: var(--button-third-color);
   animation: spin 3s linear forwards;
-  /* La rotation s'arrête après 3s */
 }
 
 
@@ -65,11 +63,9 @@
 /* Contenu principal qui sera visible après le loader */
 .content {
   display: none;
-  /* Masqué tant que le loader est visible */
   text-align: center;
   opacity: 0;
   animation: fadeIn 1s forwards 3s;
-  /* Affiche le contenu après le délai */
 }
 
 /* Animation de fade-in pour le contenu */
@@ -82,108 +78,6 @@
     opacity: 1;
   }
 }
-
-
-//   LOADER 3 POINTS //
-// html : <div class="loader">
-//   <div class="dot"></div>
-//   <div class="dot"></div>
-//   <div class="dot"></div>
-// </div>
-
-
-//   .loader {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//   }
-
-//   .dot {
-//     width: 15px;
-//     height: 15px;
-//     margin: 5px;
-//     border-radius: 50%;
-//     background-color: #3498db;
-//     animation: bounce 1.5s infinite ease-in-out;
-//   }
-
-//   .dot:nth-child(2) {
-//     animation-delay: 0.3s;
-//   }
-
-//   .dot:nth-child(3) {
-//     animation-delay: 0.6s;
-//   }
-
-//   @keyframes bounce {
-//     0%, 100% {
-//       transform: translateY(0);
-//     }
-//     50% {
-//       transform: translateY(-20px);
-//     }
-//   }
-
-
-// LOADER 3 CERCLES 
-
-
-// html 
-// <div class="loader">
-//   <div class="circle outer"></div>
-//   <div class="circle middle"></div>
-//   <div class="circle inner"></div>
-// </div>
-
-// .loader {
-//     position: relative;
-//     width: 100px;
-//     height: 100px;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//   }
-
-//   .circle {
-//     position: absolute;
-//     border-radius: 50%;
-//     border: 5px solid transparent;
-//     animation: spin 2s linear infinite;
-//   }
-
-//   .outer {
-//     width: 100px;
-//     height: 100px;
-//     border-top-color: #FF79DA;
-//     border-right-color: #9356DC;
-//     border-bottom-color: #99E2D0;
-//   }
-
-//   .middle {
-//     width: 80px;
-//     height: 80px;
-//     border-top-color: #9356DC;
-//     border-right-color: #99E2D0;
-//     border-bottom-color: #FF79DA;
-//     animation-duration: 1.5s;
-//   }
-
-//   .inner {
-//     width: 60px;
-//     height: 60px;
-//     border-top-color: #99E2D0;
-//     border-right-color: #FF79DA;
-//     border-bottom-color: #9356DC;
-//     animation-duration: 1s;
-//   }
-
-//   @keyframes spin {
-//     0% { transform: rotate(0deg); }
-//     100% { transform: rotate(360deg); }
-//   }
-
-//
-
 
 
 
@@ -216,3 +110,4 @@
 .desserts {
   animation-delay: 1s;
 }
+
