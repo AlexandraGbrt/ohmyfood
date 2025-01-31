@@ -280,17 +280,13 @@ h1 {
 .menu .menu-content .section-menu .menu-list .menu-item .card-txt .card-subtitle {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .menu .menu-content .section-menu .menu-list .menu-item .card-txt .card-subtitle p {
   font-size: 15px;
   font-weight: 300;
   margin-top: 5px;
   margin-bottom: 0;
-}
-.menu .menu-content .section-menu button {
-  align-self: center;
-  margin: 40px auto 20px auto;
-  padding: 16px 49px;
 }
 @media (min-width: 768px) {
   .menu .menu-content .section-menu {
@@ -323,6 +319,12 @@ h1 {
 .command-btn:hover {
   filter: brightness(110%);
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.command-btn {
+  align-self: center;
+  margin: 40px auto 20px auto;
+  padding: 16px 49px;
 }
 
 .fonct-btn {
@@ -492,14 +494,6 @@ footer a {
   }
 }
 
-/* Définition des couleurs */
-:root {
-  --button-first-color: #FF79DA;
-  --button-second-color: #9356DC;
-  --button-third-color: #99E2D0;
-  --button-alert-color: #008766;
-}
-
 .loader {
   position: absolute;
   top: 0;
@@ -521,9 +515,9 @@ footer a {
   height: 150px;
   border-radius: 50%;
   border: 10px solid transparent;
-  border-top-color: var(--button-first-color);
-  border-right-color: var(--button-second-color);
-  border-bottom-color: var(--button-third-color);
+  border-top-color: #FF79DA;
+  border-right-color: #9356DC;
+  border-bottom-color: #99E2D0;
   animation: spin 3s linear forwards;
 }
 
@@ -588,6 +582,55 @@ footer a {
 
 .desserts {
   animation-delay: 1s;
+}
+
+.menu-item {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+}
+.menu-item:hover .checkmark-container {
+  opacity: 1;
+  transform: translateX(0);
+}
+.menu-item .checkmark-container {
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 70px;
+  position: absolute;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #99E2D0;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.7s ease-in-out;
+}
+.menu-item .checkmark-container .checkmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 15px;
+  color: #99E2D0;
+  background-color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+.menu-item .card-txt {
+  flex-grow: 1;
+}
+.menu-item .card-txt .card-subtitle {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transition: padding-right 0.7s ease-in-out, width 0.7s ease-in-out;
+  width: auto;
+}
+.menu-item:hover .card-txt {
+  padding-right: 60px;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -21,6 +21,14 @@
   }
 }
 
+// BTN MENU //
+.command-btn {
+  align-self: center;
+  margin: 40px auto 20px auto;
+  padding: 16px 49px;
+}
+
+
 
 // FONCTIONNEMENT BUTTON //
 .fonct-btn {
@@ -78,7 +86,7 @@
 .card-rating {
   position: relative;
   cursor: pointer;
- 
+
   .fa-heart {
     // pointer-events: none;
     font-size: 23px;
@@ -118,3 +126,6 @@
     }
   }
 }
+
+
+

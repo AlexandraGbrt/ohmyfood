@@ -1,12 +1,5 @@
 @use 'variables' as *;
 
-/* Définition des couleurs */
-:root {
-  --button-first-color: #FF79DA;
-  --button-second-color: #9356DC;
-  --button-third-color: #99E2D0;
-  --button-alert-color: #008766;
-}
 
 // /* Loader */
 .loader {
@@ -30,9 +23,9 @@
   height: 150px;
   border-radius: 50%;
   border: 10px solid transparent;
-  border-top-color: var(--button-first-color);
-  border-right-color: var(--button-second-color);
-  border-bottom-color: var(--button-third-color);
+  border-top-color: $button-first-color;
+  border-right-color: $button-second-color;
+  border-bottom-color: $button-third-color;
   animation: spin 3s linear forwards;
 }
 
@@ -109,5 +102,68 @@
 
 .desserts {
   animation-delay: 1s;
+}
+
+
+
+// TRANSITIONS COCHE MENU //
+
+.menu-item {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+
+  &:hover .checkmark-container {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .checkmark-container {
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 70px;
+    position: absolute;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: $button-third-color;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.7s ease-in-out;
+
+    .checkmark {
+      display: flex; // Utilisation de flexbox
+      align-items: center; // Aligner verticalement
+      justify-content: center;
+      text-align: center;
+      font-size: 15px;
+      color: $button-third-color;
+      background-color: white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .card-txt{
+    flex-grow: 1;  
+
+    .card-subtitle {
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      // transition: padding-right 1s ease-in-out; 
+     // Le texte prend tout l'espace restant
+      transition: padding-right 0.7s ease-in-out, width 0.7s ease-in-out; 
+      width: auto;
+    }
+
+    
+  }
+  &:hover .card-txt {
+    padding-right: 60px; // Laisse de la place pour la checkmark-container
+  }
+
 }
 
