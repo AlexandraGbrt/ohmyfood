@@ -280,7 +280,7 @@ h1 {
 .menu .menu-content .section-menu .menu-list .menu-item .card-txt .card-subtitle {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 .menu .menu-content .section-menu .menu-list .menu-item .card-txt .card-subtitle p {
   font-size: 15px;
@@ -607,10 +607,6 @@ footer a {
   transition: transform 0.7s ease-in-out;
 }
 .menu-item .checkmark-container .checkmark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   font-size: 15px;
   color: #99E2D0;
   background-color: white;
@@ -621,13 +617,12 @@ footer a {
 .menu-item .card-txt {
   flex-grow: 1;
 }
-.menu-item .card-txt .card-subtitle {
-  display: block;
+.menu-item .card-txt .card-subtitle p:nth-child(1) {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  width: 100%;
   transition: padding-right 0.7s ease-in-out, width 0.7s ease-in-out;
-  width: auto;
 }
 .menu-item:hover .card-txt {
   padding-right: 60px;

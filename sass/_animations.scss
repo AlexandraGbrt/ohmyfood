@@ -132,10 +132,10 @@
     transition: transform 0.7s ease-in-out;
 
     .checkmark {
-      display: flex; // Utilisation de flexbox
-      align-items: center; // Aligner verticalement
-      justify-content: center;
-      text-align: center;
+      // display: flex;
+      // align-items: center; 
+      // justify-content: center;
+      // text-align: center;
       font-size: 15px;
       color: $button-third-color;
       background-color: white;
@@ -149,20 +149,23 @@
     flex-grow: 1;  
 
     .card-subtitle {
-      display: block;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
+      // display: block;
       // transition: padding-right 1s ease-in-out; 
-     // Le texte prend tout l'espace restant
-      transition: padding-right 0.7s ease-in-out, width 0.7s ease-in-out; 
-      width: auto;
+      
+
+      p:nth-child(1) {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 100%;
+        transition: padding-right 0.7s ease-in-out, width 0.7s ease-in-out; 
+      }
     }
 
     
   }
   &:hover .card-txt {
-    padding-right: 60px; // Laisse de la place pour la checkmark-container
+    padding-right: 60px;
   }
 
 }
