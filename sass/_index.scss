@@ -57,10 +57,10 @@ h1 {
 .restaurants {
     background-color: $secondary-bg-color;
 
-    h2 {
-        @media (min-width: 768px) {
-            padding-left: 100px;
-        }
-    }
+    // h2 {
+    //     @media (min-width: 768px) {
+    //         padding-left: 100px;
+    //     }
+    // }
 }
 

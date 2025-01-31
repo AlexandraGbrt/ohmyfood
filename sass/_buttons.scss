@@ -35,7 +35,7 @@
   @include center(column);
   gap: 24px;
 
-  button {
+  .button {
     display: flex;
     align-items: center;
     justify-content: flex-start;

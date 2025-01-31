@@ -201,11 +201,6 @@ h1 {
 .restaurants {
   background-color: #f6f6f6;
 }
-@media (min-width: 768px) {
-  .restaurants h2 {
-    padding-left: 100px;
-  }
-}
 
 .menu {
   position: relative;
@@ -334,7 +329,7 @@ h1 {
   flex-direction: column;
   gap: 24px;
 }
-.fonct-btn button {
+.fonct-btn .button {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -347,7 +342,7 @@ h1 {
   border-radius: 20px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.14);
 }
-.fonct-btn button .button-number {
+.fonct-btn .button .button-number {
   position: absolute;
   left: -12px;
   background-color: #9356DC;
@@ -356,17 +351,17 @@ h1 {
   padding: 4px 8px;
   font-size: 15px;
 }
-.fonct-btn button i {
+.fonct-btn .button i {
   margin-left: 25px;
   color: #7E7E7E;
   font-size: 19px;
 }
-.fonct-btn button p {
+.fonct-btn .button p {
   margin-left: 25px;
   font-size: 16px;
   font-weight: 500;
 }
-.fonct-btn button #icone-store {
+.fonct-btn .button #icone-store {
   color: #9356DC;
 }
 @media (min-width: 1200px) {
