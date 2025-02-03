@@ -232,66 +232,115 @@ h1 {
   font-size: 28px;
 }
 @media (min-width: 768px) {
-  .menu .menu-content .menu-restaurant-title {
+  .menu .menu-content {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
   }
 }
-.menu .menu-content .section-menu {
+.menu .section-menu {
   display: flex;
   flex-direction: column;
 }
-.menu .menu-content .section-menu .section-title {
+.menu .section-menu .section-title {
   border-bottom: 3px solid #99E2D0;
   width: 40px;
-  margin-left: 10px;
-  margin-top: 40px;
-  margin-bottom: 12px;
+  margin: 40px 0 12px 10px;
   font-size: 16px;
   font-weight: 300;
   padding-bottom: 6px;
   text-align: left;
 }
-.menu .menu-content .section-menu .menu-list {
+.menu .section-menu .menu-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-.menu .menu-content .section-menu .menu-list .menu-item {
+.menu .section-menu .menu-list .menu-item {
   padding: 12px 15px 12px 15px;
   background-color: #ffffff;
   border-radius: 15px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.14);
+  position: relative;
+  overflow: hidden;
 }
-.menu .menu-content .section-menu .menu-list .menu-item .card-txt .card-title {
+.menu .section-menu .menu-list .menu-item:hover .checkmark-container {
+  opacity: 1;
+  transform: translateX(0);
+}
+.menu .section-menu .menu-list .menu-item .checkmark-container {
+  top: 0;
+  right: 0;
+  width: 59px;
+  height: 69px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #99E2D0;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-out;
+}
+.menu .section-menu .menu-list .menu-item .checkmark-container .checkmark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 15px;
+  color: #99E2D0;
+  background-color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+.menu .section-menu .menu-list .menu-item .card-txt .card-title {
   margin: 0;
 }
-.menu .menu-content .section-menu .menu-list .menu-item .card-txt .card-title h3 {
+.menu .section-menu .menu-list .menu-item .card-txt .card-title h3 {
   font-size: 18px;
   font-weight: 500;
 }
-.menu .menu-content .section-menu .menu-list .menu-item .card-txt .card-subtitle {
+.menu .section-menu .menu-list .menu-item .card-txt .card-subtitle {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  width: 100%;
 }
-.menu .menu-content .section-menu .menu-list .menu-item .card-txt .card-subtitle p {
+.menu .section-menu .menu-list .menu-item .card-txt .card-subtitle p {
   font-size: 15px;
   font-weight: 300;
   margin-top: 5px;
   margin-bottom: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menu .section-menu .menu-list .menu-item .card-txt .card-subtitle p:nth-child(1) {
+  max-width: 100%;
+  transition: max-width 0.5s ease-out;
+}
+.menu .section-menu .menu-list .menu-item .card-txt .card-subtitle p:nth-child(2) {
+  transition: transform 0.5s ease-out;
+}
+.menu .section-menu .menu-list .menu-item:hover .card-subtitle p:nth-child(1) {
+  max-width: 70%;
+  text-overflow: ellipsis;
+}
+.menu .section-menu .menu-list .menu-item:hover .card-subtitle p:nth-child(2) {
+  transform: translateX(-50px);
 }
 @media (min-width: 768px) {
-  .menu .menu-content .section-menu {
+  .menu .section-menu {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
   }
 }
 @media (min-width: 768px) {
-  .menu .menu-content {
+  .menu {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
@@ -490,7 +539,7 @@ footer a {
 }
 
 .loader {
-  position: absolute;
+  position: fixed; /* Prend toute la page */
   top: 0;
   left: 0;
   width: 100vw;
@@ -499,11 +548,11 @@ footer a {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   z-index: 9999;
   animation: fadeOut 3s ease-in-out forwards;
+  /* Cercle de rotation avec dégradé */
 }
-
-/* Cercle de rotation avec dégradé */
 .loader::after {
   content: "";
   width: 150px;
@@ -518,19 +567,19 @@ footer a {
 
 /* Animation de rotation */
 @keyframes spin {
-  0% {
+  from {
     transform: rotate(0deg);
   }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
 /* Animation pour faire disparaître le loader après un délai */
 @keyframes fadeOut {
-  0% {
+  from {
     opacity: 1;
   }
-  100% {
+  to {
     opacity: 0;
     visibility: hidden;
   }
@@ -545,10 +594,10 @@ footer a {
 
 /* Animation de fade-in pour le contenu */
 @keyframes fadeIn {
-  0% {
+  from {
     opacity: 0;
   }
-  100% {
+  to {
     opacity: 1;
   }
 }
@@ -577,50 +626,6 @@ footer a {
 
 .desserts {
   animation-delay: 1s;
-}
-
-.menu-item {
-  position: relative;
-  cursor: pointer;
-  display: flex;
-}
-.menu-item:hover .checkmark-container {
-  opacity: 1;
-  transform: translateX(0);
-}
-.menu-item .checkmark-container {
-  top: 0;
-  right: 0;
-  width: 60px;
-  height: 70px;
-  position: absolute;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  background-color: #99E2D0;
-  transform: translateX(100%);
-  opacity: 0;
-  transition: transform 0.7s ease-in-out;
-}
-.menu-item .checkmark-container .checkmark {
-  font-size: 15px;
-  color: #99E2D0;
-  background-color: white;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-}
-.menu-item .card-txt {
-  flex-grow: 1;
-}
-.menu-item .card-txt .card-subtitle p:nth-child(1) {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  width: 100%;
-  transition: padding-right 0.7s ease-in-out, width 0.7s ease-in-out;
-}
-.menu-item:hover .card-txt {
-  padding-right: 60px;
 }
 
 /*# sourceMappingURL=main.css.map */

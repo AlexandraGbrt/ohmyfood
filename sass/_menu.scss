@@ -13,11 +13,13 @@
         border-top-right-radius: 40px;
         margin-top: -45px;
 
+
+
         .menu-restaurant-title {
             position: relative;
             @include center(row);
             justify-content: space-between;
-            
+
 
             h1 {
                 margin: 0;
@@ -27,77 +29,122 @@
                 padding-right: 24px;
             }
 
-            .card-rating {
-                
-                i {
-                    font-size: 28px;
-                    
-                }
+            .card-rating i {
+                font-size: 28px;
             }
-
-            @include center-media(768px, 1);
-
         }
 
-        .section-menu {
+        @include center-media(768px, 1);
+    }
 
+    .section-menu {
+        display: flex;
+        flex-direction: column;
+
+        .section-title {
+            border-bottom: 3px solid $button-third-color;
+            width: 40px;
+            margin: 40px 0 12px 10px;
+            font-size: 16px;
+            font-weight: 300;
+            padding-bottom: 6px;
+            text-align: left;
+        }
+
+        .menu-list {
             display: flex;
             flex-direction: column;
+            gap: 12px;
 
-            .section-title {
-                border-bottom: 3px solid $button-third-color;
-                width: 40px;
-                margin-left: 10px;
-                margin-top: 40px;
-                margin-bottom: 12px;
-                font-size: 16px;
-                font-weight: 300;
-                padding-bottom: 6px;
+            .menu-item {
+                padding: 12px 15px 12px 15px;
+                background-color: $primary-bg-color;
+                @include border-radius(15px);
+                @include shadow(0px, 4px, 15px, rgba(0, 0, 0, 0.14));
+                position: relative;
+                overflow: hidden; // Glisse dans le conteneur
 
-                text-align: left;
-            }
+                // ANIMATION MENU //
+                &:hover .checkmark-container {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
 
-            .menu-list {
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
+                .checkmark-container {
+                    top: 0;
+                    right: 0;
+                    width: 59px;
+                    height: 69px;
+                    @include center();
+                    position: absolute;
+                    border-top-right-radius: 15px;
+                    border-bottom-right-radius: 15px;
+                    background-color: $button-third-color;
 
-                .menu-item {
-                    padding: 12px 15px 12px 15px;
-                    background-color: $primary-bg-color;
-                    @include border-radius(15px);
-                    @include shadow(0px, 4px, 15px, rgba(0, 0, 0, 0.14));
+                    transform: translateX(100%);
+                    transition: transform 0.5s ease-out;
+                    // opacity: 0; // Opacité à zéro lorsqu'on part de la zone
 
-                    .card-txt {
+                    .checkmark {
+                        @include center();
+                        font-size: 15px;
+                        color: $button-third-color;
+                        background-color: white;
+                        border-radius: 50%;
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
 
-                        .card-title {
-                            margin: 0;
+                .card-txt {
+                    
+                    .card-title {
+                        margin: 0;
 
-                            h3 {
-                                font-size: 18px;
-                                font-weight: 500;
-                            }
+                        h3 {
+                            font-size: 18px;
+                            font-weight: 500;
                         }
+                    }
 
-                        .card-subtitle {
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: flex-start;
+                    .card-subtitle {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        width: 100%;
 
-                            p {
-                                font-size: 15px;
-                                font-weight: 300;
-                                margin-top: 5px;
-                                margin-bottom: 0;
+                        p {
+                            font-size: 15px;
+                            font-weight: 300;
+                            margin-top: 5px;
+                            margin-bottom: 0;
+                            overflow: hidden;
+                            white-space: nowrap;
+
+                            &:nth-child(1) {
+                                max-width: 100%;
+                                transition: max-width 0.5s ease-out;
+                            }
+
+                            &:nth-child(2) {
+                                transition: transform 0.5s ease-out;
                             }
                         }
                     }
                 }
+
+                &:hover .card-subtitle p:nth-child(1) {
+                    max-width: 70%; // Réduit la largeur pour l'ellipsis
+                    text-overflow: ellipsis;
+                }
+                &:hover .card-subtitle p:nth-child(2) {
+                    transform: translateX(-50px); // Décale le prix vers la gauche
+                }
             }
-            
-            @include center-media();
         }
 
         @include center-media();
     }
+
+    @include center-media();
 }

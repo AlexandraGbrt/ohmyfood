@@ -1,53 +1,51 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 
 // /* Loader */
 .loader {
-  position: absolute;
+  position: fixed; /* Prend toute la page */
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include center();
   z-index: 9999;
   animation: fadeOut 3s ease-in-out forwards;
-}
 
-/* Cercle de rotation avec dégradé */
-.loader::after {
-  content: '';
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 10px solid transparent;
-  border-top-color: $button-first-color;
-  border-right-color: $button-second-color;
-  border-bottom-color: $button-third-color;
-  animation: spin 3s linear forwards;
+  /* Cercle de rotation avec dégradé */
+  &::after {
+    content: '';
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 10px solid transparent;
+    border-top-color: $button-first-color;
+    border-right-color: $button-second-color;
+    border-bottom-color: $button-third-color;
+    animation: spin 3s linear forwards;
+  }
 }
-
 
 /* Animation de rotation */
 @keyframes spin {
-  0% {
+  from {
     transform: rotate(0deg);
   }
 
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
 
 /* Animation pour faire disparaître le loader après un délai */
 @keyframes fadeOut {
-  0% {
+  from {
     opacity: 1;
   }
 
-  100% {
+  to {
     opacity: 0;
     visibility: hidden;
   }
@@ -63,11 +61,11 @@
 
 /* Animation de fade-in pour le contenu */
 @keyframes fadeIn {
-  0% {
+  from {
     opacity: 0;
   }
 
-  100% {
+  to {
     opacity: 1;
   }
 }
@@ -105,68 +103,4 @@
 }
 
 
-
-// TRANSITIONS COCHE MENU //
-
-.menu-item {
-  position: relative;
-  cursor: pointer;
-  display: flex;
-
-  &:hover .checkmark-container {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .checkmark-container {
-    top: 0;
-    right: 0;
-    width: 60px;
-    height: 70px;
-    position: absolute;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background-color: $button-third-color;
-    transform: translateX(100%);
-    opacity: 0;
-    transition: transform 0.7s ease-in-out;
-
-    .checkmark {
-      // display: flex;
-      // align-items: center; 
-      // justify-content: center;
-      // text-align: center;
-      font-size: 15px;
-      color: $button-third-color;
-      background-color: white;
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-    }
-  }
-
-  .card-txt{
-    flex-grow: 1;  
-
-    .card-subtitle {
-      // display: block;
-      // transition: padding-right 1s ease-in-out; 
-      
-
-      p:nth-child(1) {
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        width: 100%;
-        transition: padding-right 0.7s ease-in-out, width 0.7s ease-in-out; 
-      }
-    }
-
-    
-  }
-  &:hover .card-txt {
-    padding-right: 60px;
-  }
-
-}
 
