@@ -219,7 +219,6 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  justify-content: space-between;
 }
 .menu .menu-content .menu-restaurant-title h1 {
   margin: 0;
@@ -233,7 +232,7 @@ h1 {
 }
 @media (min-width: 768px) {
   .menu .menu-content {
-    width: 70%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
@@ -299,6 +298,19 @@ h1 {
 }
 .menu .section-menu .menu-list .menu-item .card-txt .card-title {
   margin: 0;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: max-width 0.5s ease-out;
+}
+.menu .section-menu .menu-list .menu-item .card-txt .card-title:hover {
+  text-overflow: ellipsis;
+  max-width: 70%;
+}
+@media (min-width: 768px) {
+  .menu .section-menu .menu-list .menu-item .card-txt .card-title:hover {
+    max-width: 80%;
+  }
 }
 .menu .section-menu .menu-list .menu-item .card-txt .card-title h3 {
   font-size: 18px;
@@ -320,6 +332,7 @@ h1 {
 }
 .menu .section-menu .menu-list .menu-item .card-txt .card-subtitle p:nth-child(1) {
   max-width: 100%;
+  text-overflow: ellipsis;
   transition: max-width 0.5s ease-out;
 }
 .menu .section-menu .menu-list .menu-item .card-txt .card-subtitle p:nth-child(2) {
@@ -329,19 +342,24 @@ h1 {
   max-width: 70%;
   text-overflow: ellipsis;
 }
+@media (min-width: 768px) {
+  .menu .section-menu .menu-list .menu-item:hover .card-subtitle p:nth-child(1) {
+    max-width: 80%;
+  }
+}
 .menu .section-menu .menu-list .menu-item:hover .card-subtitle p:nth-child(2) {
   transform: translateX(-50px);
 }
 @media (min-width: 768px) {
   .menu .section-menu {
-    width: 70%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
   }
 }
 @media (min-width: 768px) {
   .menu {
-    width: 70%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
   }
