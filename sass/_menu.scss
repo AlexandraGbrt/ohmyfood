@@ -18,8 +18,6 @@
         .menu-restaurant-title {
             position: relative;
             @include center(row);
-            justify-content: space-between;
-
 
             h1 {
                 margin: 0;
@@ -97,14 +95,29 @@
                 }
 
                 .card-txt {
-                    
+
                     .card-title {
                         margin: 0;
+                        max-width: 100%;
+                        overflow: hidden;
+                        white-space: nowrap; // empeche le retour à la ligne
+                        transition: max-width 0.5s ease-out;
+
+                        &:hover {
+                            text-overflow: ellipsis;
+                            max-width: 70%;
+
+                            @media (min-width: 768px) {
+                                max-width: 80%;
+                            }
+                        }
 
                         h3 {
                             font-size: 18px;
                             font-weight: 500;
                         }
+
+
                     }
 
                     .card-subtitle {
@@ -123,6 +136,7 @@
 
                             &:nth-child(1) {
                                 max-width: 100%;
+                                text-overflow: ellipsis;
                                 transition: max-width 0.5s ease-out;
                             }
 
@@ -136,7 +150,12 @@
                 &:hover .card-subtitle p:nth-child(1) {
                     max-width: 70%; // Réduit la largeur pour l'ellipsis
                     text-overflow: ellipsis;
+
+                    @media (min-width: 768px) {
+                        max-width: 80%;
+                    }
                 }
+
                 &:hover .card-subtitle p:nth-child(2) {
                     transform: translateX(-50px); // Décale le prix vers la gauche
                 }
