@@ -63,10 +63,16 @@
                 overflow: hidden; // Glisse dans le conteneur
 
                 // ANIMATION MENU //
-                &:hover .checkmark-container {
+                &:active .checkmark-container {
                     opacity: 1;
                     transform: translateX(0);
                 }
+                @media (min-width: 1064px) {
+                    &:hover .checkmark-container {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                  }
 
                 .checkmark-container {
                     top: 0;
@@ -103,7 +109,7 @@
                         white-space: nowrap; // empeche le retour à la ligne
                         transition: max-width 0.5s ease-out;
 
-                        &:hover {
+                        &:active {
                             text-overflow: ellipsis;
                             max-width: 70%;
 
@@ -116,6 +122,12 @@
                             font-size: 18px;
                             font-weight: 500;
                         }
+                        @media (min-width: 1064px) {
+                            &:hover {
+                                text-overflow: ellipsis;
+                                max-width: 70%;
+                            }
+                          }
                     }
 
                     .card-subtitle {
@@ -145,7 +157,7 @@
                     }
                 }
 
-                &:hover .card-subtitle p:nth-child(1) {
+                &:active .card-subtitle p:nth-child(1) {
                     max-width: 70%; // Réduit la largeur pour l'ellipsis
                     text-overflow: ellipsis;
 
@@ -154,11 +166,28 @@
                     }
                 }
 
-                &:hover .card-subtitle p:nth-child(2) {
+                &:active .card-subtitle p:nth-child(2) {
                     transform: translateX(-50px); // Décale le prix vers la gauche
                 }
+
+                @media (min-width: 1064px) {
+                    &:hover .card-subtitle p:nth-child(1) {
+                        max-width: 70%; // Réduit la largeur pour l'ellipsis
+                        text-overflow: ellipsis;
+    
+                        @media (min-width: 768px) {
+                            max-width: 80%;
+                        }
+                    }
+    
+                    &:hover .card-subtitle p:nth-child(2) {
+                        transform: translateX(-50px); // Décale le prix vers la gauche
+                    }
+    
+                  }
             }
         }
+        
 
         @include center-media();
     }

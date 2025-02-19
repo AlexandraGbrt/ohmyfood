@@ -116,13 +116,25 @@
     -webkit-text-fill-color: transparent;
   }
 
-  &:hover {
+  &:active {
     .empty-heart {
       opacity: 0;
     }
 
     .full-heart {
       opacity: 1;
+    }
+  }
+
+  @media (min-width: 1064px) {
+    &:hover {
+      .empty-heart {
+        opacity: 0;
+      }
+  
+      .full-heart {
+        opacity: 1;
+      }
     }
   }
 }
