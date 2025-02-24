@@ -191,7 +191,7 @@ h1 {
 .main-section {
   padding: 40px 20px 70px 20px;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .main-section {
     padding-left: 175px;
     padding-right: 175px;
@@ -264,15 +264,9 @@ h1 {
   position: relative;
   overflow: hidden;
 }
-.menu .section-menu .menu-list .menu-item:active .checkmark-container {
+.menu .section-menu .menu-list .menu-item:hover .checkmark-container {
   opacity: 1;
   transform: translateX(0);
-}
-@media (min-width: 1064px) {
-  .menu .section-menu .menu-list .menu-item:hover .checkmark-container {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 .menu .section-menu .menu-list .menu-item .checkmark-container {
   top: 0;
@@ -309,24 +303,18 @@ h1 {
   white-space: nowrap;
   transition: max-width 0.5s ease-out;
 }
-.menu .section-menu .menu-list .menu-item .card-txt .card-title:active {
+.menu .section-menu .menu-list .menu-item .card-txt .card-title:hover {
   text-overflow: ellipsis;
   max-width: 70%;
 }
 @media (min-width: 768px) {
-  .menu .section-menu .menu-list .menu-item .card-txt .card-title:active {
+  .menu .section-menu .menu-list .menu-item .card-txt .card-title:hover {
     max-width: 80%;
   }
 }
 .menu .section-menu .menu-list .menu-item .card-txt .card-title h3 {
   font-size: 18px;
   font-weight: 500;
-}
-@media (min-width: 1064px) {
-  .menu .section-menu .menu-list .menu-item .card-txt .card-title:hover {
-    text-overflow: ellipsis;
-    max-width: 70%;
-  }
 }
 .menu .section-menu .menu-list .menu-item .card-txt .card-subtitle {
   display: flex;
@@ -350,33 +338,17 @@ h1 {
 .menu .section-menu .menu-list .menu-item .card-txt .card-subtitle p:nth-child(2) {
   transition: transform 0.5s ease-out;
 }
-.menu .section-menu .menu-list .menu-item:active .card-subtitle p:nth-child(1) {
+.menu .section-menu .menu-list .menu-item:hover .card-subtitle p:nth-child(1) {
   max-width: 70%;
   text-overflow: ellipsis;
 }
 @media (min-width: 768px) {
-  .menu .section-menu .menu-list .menu-item:active .card-subtitle p:nth-child(1) {
+  .menu .section-menu .menu-list .menu-item:hover .card-subtitle p:nth-child(1) {
     max-width: 80%;
   }
 }
-.menu .section-menu .menu-list .menu-item:active .card-subtitle p:nth-child(2) {
+.menu .section-menu .menu-list .menu-item:hover .card-subtitle p:nth-child(2) {
   transform: translateX(-50px);
-}
-@media (min-width: 1064px) {
-  .menu .section-menu .menu-list .menu-item:hover .card-subtitle p:nth-child(1) {
-    max-width: 70%;
-    text-overflow: ellipsis;
-  }
-}
-@media (min-width: 1064px) and (min-width: 768px) {
-  .menu .section-menu .menu-list .menu-item:hover .card-subtitle p:nth-child(1) {
-    max-width: 80%;
-  }
-}
-@media (min-width: 1064px) {
-  .menu .section-menu .menu-list .menu-item:hover .card-subtitle p:nth-child(2) {
-    transform: translateX(-50px);
-  }
 }
 @media (min-width: 768px) {
   .menu .section-menu {
@@ -493,19 +465,11 @@ h1 {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.card-rating:active .empty-heart {
+.card-rating:hover .empty-heart {
   opacity: 0;
 }
-.card-rating:active .full-heart {
+.card-rating:hover .full-heart {
   opacity: 1;
-}
-@media (min-width: 1064px) {
-  .card-rating:hover .empty-heart {
-    opacity: 0;
-  }
-  .card-rating:hover .full-heart {
-    opacity: 1;
-  }
 }
 
 footer {

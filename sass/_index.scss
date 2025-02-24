@@ -20,7 +20,7 @@ h1 {
     font-weight: 700;
 }
 
-.info  {
+.info {
     @include center(column);
     text-align: center;
     background-color: $secondary-bg-color;
@@ -48,7 +48,7 @@ h1 {
 .main-section {
     padding: 40px 20px 70px 20px;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
         padding-left: 175px;
         padding-right: 175px;
     }
@@ -56,10 +56,4 @@ h1 {
 
 .restaurants {
     background-color: $secondary-bg-color;
-
-    // .restaurant-title {
-    //     padding-left: 20px;
-    // }
-    
 }
-
