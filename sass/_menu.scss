@@ -78,10 +78,8 @@
                     border-top-right-radius: 15px;
                     border-bottom-right-radius: 15px;
                     background-color: $button-third-color;
-
                     transform: translateX(100%);
                     transition: transform 0.5s ease-out;
-                    // opacity: 0; // Opacité à zéro lorsqu'on part de la zone
 
                     .checkmark {
                         @include center();

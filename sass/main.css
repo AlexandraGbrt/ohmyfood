@@ -446,7 +446,7 @@ h1 {
 }
 .card-rating .empty-heart,
 .card-rating .full-heart {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 .card-rating .empty-heart {
   color: black;
@@ -557,7 +557,7 @@ footer a {
 }
 
 .loader {
-  position: fixed; /* Prend toute la page */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -569,7 +569,15 @@ footer a {
   flex-direction: column;
   z-index: 9999;
   animation: fadeOut 3s ease-in-out forwards;
-  /* Cercle de rotation avec dégradé */
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 .loader::after {
   content: "";
@@ -583,7 +591,6 @@ footer a {
   animation: spin 3s linear forwards;
 }
 
-/* Animation de rotation */
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -592,17 +599,6 @@ footer a {
     transform: rotate(360deg);
   }
 }
-/* Animation pour faire disparaître le loader après un délai */
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-/* Contenu principal qui sera visible après le loader */
 .content {
   display: none;
   text-align: center;
@@ -610,7 +606,6 @@ footer a {
   animation: fadeIn 1s forwards 3s;
 }
 
-/* Animation de fade-in pour le contenu */
 @keyframes fadeIn {
   from {
     opacity: 0;

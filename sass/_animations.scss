@@ -2,9 +2,9 @@
 @use 'mixins' as *;
 
 
-// /* Loader */
+// LOADER //
 .loader {
-  position: fixed; /* Prend toute la page */
+  position: fixed; // Prend toute la page 
   top: 0;
   left: 0;
   width: 100vw;
@@ -14,7 +14,19 @@
   z-index: 9999;
   animation: fadeOut 3s ease-in-out forwards;
 
-  /* Cercle de rotation avec dégradé */
+  // Animation pour faire disparaître le loader après 3s
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+  // Cercle de rotation avec dégradé 
   &::after {
     content: '';
     width: 150px;
@@ -28,7 +40,7 @@
   }
 }
 
-/* Animation de rotation */
+// Animation de rotation 
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -39,19 +51,7 @@
   }
 }
 
-/* Animation pour faire disparaître le loader après un délai */
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-/* Contenu principal qui sera visible après le loader */
+// Contenu principal visible après le loader 
 .content {
   display: none;
   text-align: center;
@@ -59,7 +59,7 @@
   animation: fadeIn 1s forwards 3s;
 }
 
-/* Animation de fade-in pour le contenu */
+// Animation de fade-in pour le contenu 
 @keyframes fadeIn {
   from {
     opacity: 0;
